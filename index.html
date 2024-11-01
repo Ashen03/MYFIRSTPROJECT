@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>HOTEL RESERVATION SYSTEM</title>
+    
+</head>
+<body>
+      <header>
+          <nav>
+            <a href ="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#rooms">ROOMS</a>
+            <a href="#reservation">RESERVATION</a>
+            <a href="#discovery">DISCOVERY</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+      </header>
+    <main>
+      <section id="home">
+       <p>Welcome to our website</p>
+       <img src="" alt="logo">
+      </section>
+
+      <section id="about">
+        <p>about</p>
+      </section>
+
+      <section id="rooms">
+        <p>rooms</p>
+      </section>
+
+      <section id="reservation">
+        <p>reservation</p>
+      </section>
+
+      <section id="discovery">
+        <p>discovery</p>
+      </section>
+
+      <section id="contact">
+        <p>contact</p>
+      </section>
+    </main>
+
+
+
+  <style>
+     html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background-image: url("image/waldemar-3i3MtECZkDI-unsplash.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: whitesmoke;
+      margin: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      z-index: 1000;     
+      margin-top: 50px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    header a {
+      text-decoration: none;
+      color: whitesmoke;
+      margin: 0 45px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: red;
+    }
+
+    main {
+      padding-top: 60px; /* Adjust padding to match the header height */
+      padding: 20px;
+    }
+
+    section {
+      padding: 50px 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .home p {
+      color: aqua;
+      font-size: 50px;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 50px;
+      color: red;
+    }
+    header a.active {
+      color: green;
+    }
+
+
+  </style>
+
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("main section"); // All sections in the main content
+    const navLinks = document.querySelectorAll("header a"); // All navigation links
+
+    function setActiveLink() {
+      let index = sections.length;
+
+      // Find the section currently in view
+      while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+      // Remove the active class from all links
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      // Add the active class to the link corresponding to the current section
+      navLinks[index].classList.add("active");
+    }
+
+    // Call setActiveLink immediately to set the active link on page load
+    setActiveLink();
+
+    // Listen for scroll events to update the active link dynamically
+    window.addEventListener("scroll", setActiveLink);
+  });
+  </script>
+
+
+
+</body>
+</html>
